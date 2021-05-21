@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            padding: 50px 10px;
+        }
+
+        @media (max-width: 920px) {
+            html {
+                font-size: 100%;
+            }
+        }
+
+        @media (max-width: 720px) {
+            html {
+                font-size: 75%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 65%;
+            }
+        }
+
+        img {
+            display: block;
+        }
+
+        @font-face {
+            font-family: SimplonBpLight;
+            src: url(./fonts/simplonbp-light-webfont.eot) format('embedded-opentype'),
+                url(./fonts/simplonbp-light-webfont.woff) format('woff'),
+                url(./fonts/simplonbp-light-webfont.woff2) format('woff2')
+        }
+
+        @font-face {
+            font-family: SimplonOI;
+            src: url(./fonts/simplonoi-headline.woff) format('woff'),
+                url(./fonts/simplonoi-headline.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: SimplomBpRegular;
+            src: url(./fonts/simplonbp-regular-webfont.woff) format('woff'),
+                url(./fonts/simplonbp-regular-webfont.woff2) format('woff2');
+        }
+
+        /* ========= component01========= */
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .cp01 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            max-width: 920px;
+            max-height: 347px;
+        }
+
+        .box {
+            max-width: 306px;
+            height: 170px;
+            position: relative;
+        }
+
+        .box img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box-big {
+            max-width: 613px;
+            height: 341px;
+            position: relative;
+        }
+
+        .box-big img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+        }
+
+        .text span {
+            font-family: SimplonBpLight;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .text p {
+            font-family: SimplonOI;
+            color: #fff;
+        }
+
+        .text.big {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .text.big span {
+            font-size: 0.875rem;
+        }
+
+        .text.big p {
+            font-size: 1.625rem;
+        }
+
+        .text.sm {
+            bottom: 5px;
+            left: 5px;
+        }
+
+        .text.sm span {
+            font-size: 0.875rem;
+        }
+
+        .text.sm p {
+            font-size:1.375rem;
+            font-family: SimplonBpLight;
+            line-height: 1;
+        }
+
+        
+
+        @media (max-width: 600px) {
+            .cp01 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .two-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 1px solid #ccc;
+            }
+        }
+
+
+        @media (max-width: 425px) {
+            .text.big {
+                bottom: 12px;
+                left: 12px;
+            }
+        }
+
+
+        /* ========= component02========= */
+
+        .cp02 {
+            padding-bottom: 33.5px;
+        }
+
+        .btns {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 16px 0;
+        }
+        .btns img {
+            width: 26px;
+            height: 26px;
+        }
+
+        .cp02-box {
+            max-width:306px;
+            max-height: 340px;
+        }
+
+
+        .text.sm02 {
+            bottom: 15px;
+            left: 15px;
+            padding-right: 5px;
+        }
+
+        .text.sm02 span {
+            display: block;
+            font-size: 0.875rem;
+            color: #C4C4C4;
+            margin-bottom: 10px;
+        }
+
+        .text.sm02 p {
+            font-size:1.25rem;
+            font-family: SimplonOI;
+            font-weight: 400;
+            line-height: 1;
+            color: #C4C4C4;
+        }
+
+        .three-box-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .three-box-content img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        @media (max-width: 600px) {
+            .btns {
+                justify-content: center;
+                padding-top:50px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .btns {
+                padding-top:40px;
+            }
+        } 
+
+        @media (max-width: 440px) {
+            .cp02 {
+                padding-top: 0;
+            }
+
+            .btns {
+                padding-top:10px;
+            }
+
+            .text.sm02 {
+                bottom: 10px;
+                left: 10px;
+            }
+        }
+
+        .wrapper {
+            overflow: hidden;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+
+
+            width: 100%;
+        }
+
+        .slide {
+            display: flex;
+        }
+
+
+        .slide:hover {
+            will-change: transform;
+        }
+
+
+    .slide > div {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+
+        width: 100%;
+
+    }
+
+    .slide div > div {
+        max-width: 306px;
+
+        width: 100%;
+        flex-shrink: 0;
+       
+        transition: .4s;
+    }
+
+    .crs1 ,
+    .crs2 ,
+    .crs3,
+    .crs4 ,
+    .crs5 ,
+    .crs6,
+    .crs7,
+    .crs8 ,
+    .crs9 {
+        position: relative;
+    }
+
+        @media (max-width: 400px) {
+            .btns {
+                padding-top:0px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .text.sm02 {
+                bottom: 5px;
+                left: 5px;
+            }
+        }
+
+
+        @media (max-width: 425px) {
+            .slide {
+                max-width: 350px;
+                width: 100%;
+            }
+        }
+
+        /* ========= component03========= */
+        .cp03 {
+            max-width: 920px;
+            max-height: 235px;
+            margin-top: 33.5px;
+
+            margin-bottom: 50px;
+        }
+
+        .cp03 img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text.sm03 {
+            bottom: 31px;
+            left: 25px;
+        }
+
+        .text.sm03 span {
+            font-size: 0.875rem;
+        }
+
+        .text.sm03 p {
+            font-size:1.375rem;
+            font-family: Sim;
+            line-height: 1;
+        }
+
+
+        @media (max-width: 600px) {
+            .cp03 {
+                margin-top: 0px;
+            }
+
+            .text.sm03 {
+                bottom: 21px;
+                left: 18px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .text.sm03 {
+                bottom: 10px;
+                left: 10px;
+            }
+        } 
+
+        /* ========= component04========= */
+
+        .cp04 {
+            display: flex;
+            padding-top: 50px;
+            padding-bottom: 50px;
+
+
+            align-content: center;
+            justify-content: space-between
+        }
+        .cp04-box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 286px;
+            max-height: 279px;
+
+        }
+
+        .cp04-box div {
+            width: 100%;
+            height: 30px;
+        }
+
+        .cp04-box h2 {
+            font-size: 1.375rem;
+            font-family: SimplonOI;
+            color: #4C4C4C;
+            font-weight: 400;
+        }
+
+        .cp04-box img {
+            max-height: 162.58px;
+            height: 100%;
+            object-fit: cover;
+            margin: 12px 0;
+        }
+
+        .cp04-box p {
+            font-size: 1.25rem;
+            font-family: SimplomBpRegular;
+            color: #4C4C4C;
+        }
+
+        @media (max-width:890px) {
+            .cp04 {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cp04-box {
+                max-width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .cp04 {
+                padding-bottom: 0px;
+            }
+
+            .cp04-box {
+                max-width: 90%;
+            }
+        }
+
+
+        /* ========= component07========= */
+
+
+        .cp07 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            max-width: 920px;
+            max-height: 187px;
+
+
+            margin-top: 50px;
+        }
+
+        .cp07 img {
+            max-width: 460px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cp07-text {
+            display:flex;
+            flex: 1;
+            height: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
+            justify-content: flex-start;
+            margin-left: 21px;
+            max-height: 187px;
+        }
+
+        .cp07-text  span {
+            display: block;
+            font-size: 0.875rem;
+            font-family: SimplonBpLight;
+            color: #4C4C4C;
+            align-self: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .cp07-text  h2 {
+            font-size: 1.625rem;
+            font-family: SimplonOI;
+            font-weight: normal;
+            color: #FF238E;
+
+            margin-bottom: 10px;
+        }
+
+        .cp07-text  p {
+            font-size: 1rem;
+            font-family: SimplonBpLight;
+            font-weight: normal;
+            color: #4C4C4C;
+        }
+
+
+        @media (max-width: 770px) {
+            .cp07 {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: flex-start;
+
+                margin-top: 180px;
+            }
+            .cp07 img {
+                max-width: 80%;
+            }
+
+            .cp07-text {
+                margin-bottom: 20px;
+                max-width: 80%;
+
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .cp07 img {
+                max-width: 90%;
+            }
+
+            .cp07-text {
+                max-width: 90%;
+            }
+
+            .cp07 {
+                margin-top: 80px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="grid">
+            <section class="cp01" style="padding-bottom: 50px;">
+                <div class="box-big">
+                    <img src="./imgs/cp01-img-big.png" alt="img">
+
+                    <div class="text big">
+                        <span>chapeu</span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, soluta!</p>
+                    </div>
+                </div>
+        
+                <div class="two-box">
+                    <div class="box">
+                        <a href="#" target="_blank">
+                            <img src="imgs/cp01-preview-video.png" alt="preview">
+                        </a>
+
+                        <div class="text sm" style="pointer-events:none">
+                            <span>chapeu</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="imgs/cp01-img-sm.png" alt="preview">
+
+                        <div class="text sm">
+                            <span>chapeu</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>      
+            
+            
+            <section class="cp02">
+                <div class="btns">
+                    <img src="imgs/cp02-btn-left.png" alt="btn left" class="prev" >
+                    <img src="imgs/cp02-btn-right.png" alt="btn right" class="next" style="margin-left: 5px;">
+                </div>
+
+                <div class="three-box-content wrapper">
+                    <div class="slide">
+                        <div class="cp02-box" style="position: relative;">
+                            <div class="crs1">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs2">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p> consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs3">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, </p>
+                                </div>
+                            </div>
+                            <div class="crs4">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs5">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs6">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs7">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs8">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                            <div class="crs9">
+                                <img src="imgs/cp02-img.png" alt="cp02">
+                                <div class="text sm02">
+                                    <span>chapeu</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cp03" style="position: relative;">
+                <a href="#" target="_blank">
+                    <img src="imgs/cp03-banner.png" alt="Banner">
+                </a>
+
+                <div class="text sm03" style="pointer-events:none">
+                    <span>chapeu</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                </div>
+            </section>
+
+
+
+            <section class="cp04">
+                <div class="cp04-box">
+                    <div>
+                        <h2>Lorem ipsum dolor sit.</h2>
+                    </div>
+
+                    <img src="imgs/cp05-img.png" alt="cp05-img">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veritatis.</p>
+                </div>
+                <div class="cp04-box">
+                    <div>
+                       
+                    </div>
+
+                    <img src="imgs/cp05-img.png" alt="cp05-img" >
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veritatis.</p>
+                </div>
+                <div class="cp04-box">
+
+                    <div>
+                        
+                    </div>
+
+                    <img src="imgs/cp05-img.png" alt="cp05-img">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veritatis.</p>
+                </div>
+            </section>
+
+           
+
+            <section class="cp07">
+                <img src="imgs/cp07-img.png" alt="cp07img">
+
+                <div class="cp07-text">
+                    <span>Chapeu</span>
+
+                    <h2>Lorem ipsum dolor, Nihil sapiente numquam voluptate?</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dicta iure eligendi odit architecto et debitis dolor nostrum iste quia.</p>
+                </div>
+            </section>
+
+            
+        </div>
+    </main>
+
+    <script type="module" src="./scripts/slide.js"></script>
+</body>
+</html>
